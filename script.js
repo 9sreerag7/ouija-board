@@ -10,21 +10,7 @@ function askQuestion() {
 
     responseText.innerText = "The spirits are thinking...";
 
-    function checkOrientation() {
-        const warning = document.getElementById("orientation-warning");
-    
-        // Check if the screen is in portrait mode and the user is on mobile
-        if (window.innerHeight > window.innerWidth && /Mobi|Android/i.test(navigator.userAgent)) {
-            warning.style.display = "flex"; // Show the popup
-        } else {
-            warning.style.display = "none"; // Hide the popup
-        }
-    }
-    
-    // Check on page load and whenever the screen orientation changes
-    window.addEventListener("load", checkOrientation);
-    window.addEventListener("resize", checkOrientation);
-    
+   
 
     // Move the coin in a random pattern around the board
     let steps = 20;

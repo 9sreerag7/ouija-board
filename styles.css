@@ -1,0 +1,209 @@
+/* General styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1b1b1d, #3c0d0d); /* Smoky gray with bloody red */
+    color: #ffdddd; /* Pale ghostly pinkish white */
+    font-family: 'Creepster', cursive; /* Add a horror-themed font if possible */
+    margin: 0;
+    overflow: hidden;
+}
+
+.ouija-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('ouija-board-4973914_1280.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 60px rgba(139, 0, 0, 0.8), inset 0 0 30px rgba(255, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    height: 75vh;
+    max-height: 600px;
+    position: relative;
+    border: 2px solid rgba(255, 0, 0, 0.5); /* Bloody border glow */
+}
+
+/* Coin styling */
+.coin {
+    width: 100px;
+    height: 100px;
+    background: url('filee.png') no-repeat center center;
+    background-size: cover; /* Ensure the coin image is fully visible */
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    transition: top 0.3s ease, left 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); /* Bloody glow around the coin */
+}
+
+/* Output text (response) */
+.response {
+    margin-bottom: 250px; /* Original position */
+}
+
+.response p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f40505; /* Bright bloody red */
+    text-shadow: 2px 2px 15px rgba(252, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.3); /* Glow effect */
+    animation: pulse-text 2s infinite;
+}
+
+@keyframes pulse-text {
+    0%, 100% {
+        text-shadow: 2px 2px 15px rgba(255, 0, 0, 0.9);
+    }
+    50% {
+        text-shadow: 4px 4px 20px rgba(255, 0, 0, 1);
+    }
+}
+
+/* Input text box */
+input[type="text"] {
+    padding: 12px;
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 160px; /* Original position */
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #3c0d0d, #4a1e1e); /* Dark bloody gradient */
+    color: #ffffff; /* Ghostly white text */
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3), inset 0 0 10px rgba(255, 0, 0, 0.5); /* Bloody glow inside */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); /* Brighter bloody glow on focus */
+}
+
+input[type="text"]::placeholder {
+    color: #ffaaaa; /* Faint bloody pink text */
+    opacity: 0.8;
+    font-weight: normal;
+}
+
+/* Ask button */
+button {
+    margin-top: 0; /* Original position */
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #5a1b1b, #7c2626); /* Bloody gradient */
+    border: none;
+    border-radius: 10px;
+    color: #ffffff; /* Ghostly white text */
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); /* Subtle bloody glow */
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #7c2626, #5a1b1b);
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* Stronger bloody glow on hover */
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.9); /* Dim glow on click */
+}
+
+/* Popup styling */
+.orientation-warning {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.orientation-warning p {
+    background: rgba(255, 0, 0, 0.8); /* Bloody red warning */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: pulse 2s infinite;
+}
+
+/* Text pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .ouija-board {
+        height: 85vh;
+    }
+
+    .coin {
+        width: 80px;
+        height: 80px;
+    }
+
+    input[type="text"] {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .response p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ouija-board {
+        height: 90vh;
+        padding: 10px;
+    }
+
+    .coin {
+        width: 70px;
+        height: 70px;
+    }
+
+    input[type="text"] {
+        width: 80%;
+        font-size: 0.8rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .response p {
+        font-size: 1.2rem;
+    }
+}

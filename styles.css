@@ -52,7 +52,7 @@ body {
 .response p {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #7e0808dc /* Bright bloody red */
+    color: #7e0808dc; /* Bright bloody red */
     text-shadow: 2px 2px 15px rgba(219, 3, 3, 0.87), 0 0 10px rgba(208, 2, 2, 0.3); /* Glow effect */
     animation: pulse-text 2s infinite;
 }

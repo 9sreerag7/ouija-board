@@ -10,7 +10,19 @@ function askQuestion() {
 
     responseText.innerText = "The spirits are thinking...";
 
-   
+   // Wait for the audio to load and play
+const audioElement = document.getElementById("audio");
+
+audioElement.addEventListener('canplaythrough', function() {
+    // Hide the fallback message once the audio is ready to play
+    const fallbackMessage = document.querySelector('audio').textContent;
+    if (fallbackMessage) {
+        // Hide the message manually if you want
+        const fallbackText = document.querySelector('audio').nextElementSibling;
+        if (fallbackText) fallbackText.style.display = 'none';
+    }
+});
+
 
     // Move the coin in a random pattern around the board
     let steps = 20;
